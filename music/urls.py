@@ -16,5 +16,4 @@ urlpatterns = [
 	url(r'^Music/get_files/$', musicfileViews.get_File_Handler, name='get_File_Handler'),
 	url(r'^Music/get_image/$', musicfileViews.get_Image_Handler, name='get_Image_Handler'),
 	url(r'^Music/Delete_file/$', musicfileViews.delete_file_Handler, name='delete_file_Handler'),
-	url(r'^media/(?P<path>.*)', serve, {'document_root': settings.MEDIA_ROOT}),
 ]
