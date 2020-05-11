@@ -10,8 +10,10 @@ def createMusicHandler(request):
 #获取参数列表
 @csrf_exempt
 def getMusicListHandler(request):
-	print('xx')
-	return DataSqlHandler.Data_Handler(DataSqlHandler, Music, request, 'getlist')
+	try:
+		return DataSqlHandler.Data_Handler(DataSqlHandler, Music, request, 'getlist')
+	except Exception as e:
+		print(e)
 
 #删除参数
 @csrf_exempt
