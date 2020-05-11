@@ -8,7 +8,7 @@ class AuthTokenHandler(object):
 	HEADER = {'typ': 'JWP', 'alg': 'default'}
 	KEY = 'Amxue_Li'
 	SALT = 'www.amxus.info'
-	TIME_OUT = 20 * 60
+	TIME_OUT = 1 * 60
 	#加密
 	def encrypt(self, obj):
 		value = signing.dumps(obj, key=self.KEY, salt=self.SALT)
