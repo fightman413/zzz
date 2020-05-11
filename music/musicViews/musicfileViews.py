@@ -3,11 +3,11 @@
 #获取参数列表
 from django.views.decorators.csrf import csrf_exempt
 
-from music.base import FilesHandler
+#from music.base import FilesHandler
 from music.models import MusicFile
 
 
-
+from myblogdjango.filesHandle import FilesHandler
 from myblogdjango.base import DataSqlHandler
 
 #音乐

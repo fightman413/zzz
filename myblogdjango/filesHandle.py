@@ -23,3 +23,23 @@ class FilesHandler(DataSqlHandler):
 				'name': file[0].name,
 				'Address': filePath + file[0].name
 			},extra=extra)
+
+	def Upload_image_Handler(self, ModelClass, requestData, extra={}):
+		batchList = []
+		fileField = ModelClass().get_image_field()
+		filePath = ModelClass().get_image_path()
+		file = requestData.FILES.getlist('file')
+		for item in file:
+			exp = {}
+			exp['FileName'] = item.name
+			exp[fileField] = item
+			batchList.append(exp)
+		extra['Data'] = batchList
+		extra['extraFields'] = {
+			'State': 1
+		}
+		self.Batch_Insert_Data(self, ModelClass, requestData, extra)
+		return self.ResponseHandler(self, True, {
+			'name': file[0].name,
+			'Address': filePath + file[0].name
+		}, extra=extra)
