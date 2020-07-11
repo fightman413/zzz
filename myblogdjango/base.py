@@ -133,6 +133,8 @@ class DataSqlHandler(object):
 	#添加数据
 	def Create_Data_Handler(self, ModelClass, PostData, extra):
 		try:
+            # singer = request.GET["singer"]
+            # print(singer)
 			Create_Data = ModelClass()
 			primary_key = self.return_primary_key(self, ModelClass)
 			for field in PostData:
@@ -275,6 +277,7 @@ class DataSqlHandler(object):
 		try:
 			extra = self.loginStatus(self, requestData, extra)
 			PostData = self.RequestHandler(self, requestData)
+
 			if type=='add':
 				return self.Create_Data_Handler(self, ModelClass, PostData, extra)
 			if type=='update':
@@ -289,4 +292,5 @@ class DataSqlHandler(object):
 				return self.GetPageList_Data_Handler(self, ModelClass, PostData, extra)
 		except Exception as e:
 			print(e)
+
 

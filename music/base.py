@@ -1,3 +1,6 @@
+from conda_env import env
+from sphinx.util import requests
+
 from myblogdjango.base import DataSqlHandler
 
 
@@ -42,3 +45,21 @@ class FilesHandler(DataSqlHandler):
             'name': file[0].name,
             'Address': filePath + file[0].name
         }, extra=extra)
+#
+# class OpenId:
+#     def __init__(self, jscode):
+#         self.url = 'https://api.weixin.qq.com/sns/jscode2session'
+#         self.app_id = env.str('APPID')
+#         self.app_secret = env.str('APPSECRET')
+#         self.jscode = jscode
+#
+#     def get_openid(self):
+#         url = self.url + "?appid=" + self.app_id + "&secret=" + self.app_secret + "&js_code=" + self.jscode + "&grant_type=authorization_code"
+#         res = requests.get(url)
+#         try:
+#             openid = res.json()['openid']
+#             session_key = res.json()['session_key']
+#         except KeyError:
+#             return 'fail'
+#         else:
+#             return openid, session_key
