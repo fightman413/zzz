@@ -18,9 +18,9 @@ def createSeedHandler(request):
 	# seed = Seed()
 	seed.singer = request.GET['singer']
 	seed.songs_name = '种子'
-    IsDeleted = 'false'
-    CreateTime = '2020-07-14T02:37:08.363Z'
-    UpdateTime = '2020-07-14T02:37:08.363Z'
+    seed.IsDeleted = 'false'
+    seed.CreateTime = '2020-07-14T02:37:08.363Z'
+    seed.UpdateTime = '2020-07-14T02:37:08.363Z'
    
 	seed.save()
 	data_dict = {
