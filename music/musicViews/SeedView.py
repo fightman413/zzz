@@ -18,7 +18,7 @@ def createSeedHandler(request):
 	# seed = Seed()
 	seed.singer = request.GET['singer']
 	seed.songs_name = '种子'
-    seed.IsDeleted = false
+    seed.IsDeleted = False
     seed.CreateTime = '2020-07-14T02:37:08.363Z'
     seed.UpdateTime = '2020-07-14T02:37:08.363Z'
    
