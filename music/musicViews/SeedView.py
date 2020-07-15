@@ -22,10 +22,10 @@ def createSeedHandler(request):
 	#
 	print(seed.songs_name)
 	#
-	seed.save()
+	# seed.save()
 	data_dict = {
 
-		"success": 'success',
+		"success": seed.songs_name,
 	}
 	return JsonResponse(data_dict,json_dumps_params={'ensure_ascii':False},safe=False)
 
