@@ -21,7 +21,7 @@ def createSeedHandler(request):
 	#
 	print(seed.focus_time)
 	#
-	# seed.save()
+	seed.save()
 	data_dict = {
 
 		"success": seed.songs_name,
