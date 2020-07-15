@@ -19,7 +19,7 @@ def createSeedHandler(request):
 	seed.songs_name = '种子'
 	#
 	#
-	print(seed)
+	print(seed.focus_time)
 	#
 	# seed.save()
 	data_dict = {
