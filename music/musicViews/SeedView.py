@@ -17,7 +17,9 @@ def createSeedHandler(request):
 	seed.interrupt = request.GET['interrupt']
 	# seed = Seed()
 	seed.singer = request.GET['singer']
-	# seed.songs_name = request.GET['songs_name']
+	seed.songs_name = '种子'
+    
+   
 	seed.save()
 	data_dict = {
 
