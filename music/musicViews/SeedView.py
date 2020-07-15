@@ -11,16 +11,15 @@ def createSeedHandler(request):
 	# return DataSqlHandler.Data_Handler(DataSqlHandler,Seed, request, 'add')
 
 	seed = Seed()
-	# seed.openid = request.GET['openid']
-	# seed.focus_time = request.GET['focus_time']
-	# seed.interrupt_time = request.GET['interrupt_time']
-	# seed.interrupt = request.GET['interrupt']
-	# # seed = Seed()
-	# seed.singer = request.GET['singer']
+	seed.openid = request.GET['openid']
+	seed.focus_time = request.GET['focus_time']
+	seed.interrupt_time = request.GET['interrupt_time']
+	seed.interrupt = request.GET['interrupt']
+	seed.singer = request.GET['singer']
 	seed.songs_name = '种子'
 	#
 	#
-	print(seed.songs_name)
+	print(seed)
 	#
 	# seed.save()
 	data_dict = {
