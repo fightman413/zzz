@@ -28,12 +28,18 @@ def createSeedHandler(request):
     #     openid = request.GET['openid']
 	# )
 	# print(request.POST)
-
-	seed.save(force_insert=True, force_update=True)
 	data_dict = {
 		"success": 'success716',
 	}
-	return JsonResponse(data_dict,json_dumps_params={'ensure_ascii':False},safe=False)
+	try:
+		back = seed.save()
+		return back
+	except Exception as e:
+
+		return JsonResponse(error_string=str(e))
+
+
+	# return JsonResponse(data_dict,json_dumps_params={'ensure_ascii':False},safe=False)
 
 #添加参数
 @csrf_exempt
