@@ -9,19 +9,26 @@ from myblogdjango.base import DataSqlHandler
 @csrf_exempt
 def createSeedHandler(request):
 	seed = Seed()
-	seed.focus_time = request.GET['focus_time']
-	seed.interrupt_time = request.GET['interrupt_time']
-	seed.singer = request.GET['singer']
-	seed.songs_name = '种子'
-	seed.interrupt = request.GET['interrupt']
-	seed.openid = request.GET['openid']
-	seed.IsDeleted = False
-	seed.CreateTime = '2020-07-06T12:21:12.872Z'
-	seed.UpdateTime= '2020-07-06T12:21:12.872Z'
-	print(seed.focus_time)
-	seed.save()
+	# seed.focus_time = request.GET['focus_time']
+	# seed.interrupt_time = request.GET['interrupt_time']
+	# seed.singer = request.GET['singer']
+	# seed.songs_name = '种子'
+	# seed.interrupt = request.GET['interrupt']
+	# seed.openid = request.GET['openid']
+	# seed.IsDeleted = False
+	# seed.CreateTime = '2020-07-06T12:21:12.872Z'
+	# seed.UpdateTime= '2020-07-06T12:21:12.872Z'
+	# print(seed.focus_time)
+	seed = Seed.objects.create(
+		focus_time=request.GET['focus_time'],  # 设定字段与传入值进行对应（将会什么内容将会保存在什么字段下。）。
+		interrupt_time=request.GET['interrupt_time'],
+		singer=request.GET['singer'],
+        songs_name = '种子',
+        interrupt = request.GET['interrupt'],
+        openid = request.GET['openid']
+	)
 	data_dict = {
-		"success": seed.songs_name,
+		"success": 'success716',
 	}
 	return JsonResponse(data_dict,json_dumps_params={'ensure_ascii':False},safe=False)
 
