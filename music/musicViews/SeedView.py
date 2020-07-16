@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from  sphinx.util import requests
 
-from music.models import Seed, SeedRecorded
+from music.models import Seed
 from myblogdjango.base import DataSqlHandler
 
 #添加种子参数
