@@ -12,7 +12,7 @@ def createSeedHandler(request):
 	seed.focus_time = request.GET['focus_time']
 	seed.interrupt_time = request.GET['interrupt_time']
 	seed.singer = request.GET['singer']
-	seed.songs_name = '种子'
+	seed.songs_name = 'zz'
 	seed.interrupt = request.GET['interrupt']
 	seed.openid = request.GET['openid']
 	# seed.IsDeleted = False
@@ -29,7 +29,7 @@ def createSeedHandler(request):
 	# )
 	# print(request.POST)
 
-	seed.save()
+	seed.save(force_insert=True, force_update=True)
 	data_dict = {
 		"success": 'success716',
 	}
