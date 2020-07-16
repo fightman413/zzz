@@ -31,15 +31,14 @@ def createSeedHandler(request):
 	data_dict = {
 		"success": 'success716',
 	}
-	try:
-		back = seed.save()
-		return back
-	except Exception as e:
-
-		return JsonResponse(error_string=str(e))
-
-
-	# return JsonResponse(data_dict,json_dumps_params={'ensure_ascii':False},safe=False)
+	# try:
+	# 	back = seed.save()
+	# 	return back
+	# except Exception as e:
+	#
+	# 	return JsonResponse(error_string=str(e))
+	seed.save()
+	return JsonResponse(data_dict,json_dumps_params={'ensure_ascii':False},safe=False)
 
 #添加参数
 @csrf_exempt

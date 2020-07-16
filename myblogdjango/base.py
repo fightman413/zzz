@@ -133,8 +133,6 @@ class DataSqlHandler(object):
 	#添加数据
 	def Create_Data_Handler(self, ModelClass, PostData, extra):
 		try:
-            # singer = request.GET["singer"]
-            # print(singer)
 			Create_Data = ModelClass()
 			primary_key = self.return_primary_key(self, ModelClass)
 			for field in PostData:
@@ -144,6 +142,7 @@ class DataSqlHandler(object):
 			Create_Data.save()
 			return self.ResponseHandler(self, True, extra=extra)
 		except Exception as e:
+			print(e)
 			return self.ResponseHandler(self, False, extra=extra)
 
 	#更新数据
