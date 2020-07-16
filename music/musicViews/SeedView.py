@@ -32,6 +32,10 @@ def createSeedHandler(request):
 	}
 	return JsonResponse(data_dict,json_dumps_params={'ensure_ascii':False},safe=False)
 
+#添加参数
+@csrf_exempt
+def InitHandler(request):
+	return DataSqlHandler.Data_Handler(DataSqlHandler,Seed, request, 'add')
 
 #删除参数
 @csrf_exempt

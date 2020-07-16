@@ -21,4 +21,6 @@ urlpatterns = [
 	url(r'^Seed/Update/$', SeedView.updateSeedListHandler, name='updateSeedListHandler'),
 	url(r'^Seed/GetList/$', SeedView.getSeedListHandler, name='getSeedListHandler'),
 	url(r'^Seed/Getid/$', SeedView.getSeedIdHandler, name='getSeedIdHandler'),
+    url(r'^Seed/Init/$', SeedView.InitHandler, name='InitHandler'),
+    
 ]
