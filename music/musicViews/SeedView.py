@@ -28,7 +28,7 @@ def createSeedHandler(request):
     #     openid = request.GET['openid']
 	# )
 	# print(request.POST)
-    seed.assignBaseObjId(0);
+
 	seed.save()
 	data_dict = {
 		"success": 'success716',

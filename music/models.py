@@ -51,31 +51,3 @@ class Seed(models.Model):
     IsDeleted = models.BooleanField(default=False)
     CreateTime = models.DateTimeField(auto_now_add=True)
     UpdateTime = models.DateTimeField(auto_now=True)
-
-
-class SeedRecorded(models.Model):
-    uid =  models.UUIDField(primary_key=True, auto_created=True, default=uuid.uuid4, editable=False)
-    openid = models.CharField(max_length=120)
-    singer = models.CharField(max_length=20)
-    songs_name = models.CharField(max_length=20)
-    focusTime = models.CharField(max_length=20)
-    interruptTime = models.CharField(max_length=20)
-    interrupt = models.CharField(max_length=20)
-    IsDeleted = models.BooleanField(default=False)
-    CreateTime = models.DateTimeField(auto_now_add=True)
-    UpdateTime = models.DateTimeField(auto_now=True)
-
-class UserInfo(models.Model):
-    uid = models.UUIDField(primary_key=True, auto_created=True, default=uuid.uuid4, editable=False),
-    openid = models.CharField(max_length=120),
-    city=models.CharField(max_length=20),
-    country=models.CharField(max_length=20),
-    gender=models.IntegerField(max_length=5),
-    language=models.CharField(max_length=20),
-    nickName=models.CharField(max_length=20),
-    province=models.CharField(max_length=20),
-    totalPlanInvestTime = models.CharField(max_length=50),
-    planType =models.BooleanField(default=False)
-    IsDeleted = models.BooleanField(default=False)
-    CreateTime = models.DateTimeField(auto_now_add=True)
-    UpdateTime = models.DateTimeField(auto_now=True)
