@@ -8,22 +8,19 @@ from myblogdjango.base import DataSqlHandler
 #添加种子参数
 @csrf_exempt
 def createSeedHandler(request):
-	# return DataSqlHandler.Data_Handler(DataSqlHandler,Seed, request, 'add')
-
 	seed = Seed()
-	seed.openid = request.GET['openid']
 	seed.focus_time = request.GET['focus_time']
 	seed.interrupt_time = request.GET['interrupt_time']
-	seed.interrupt = request.GET['interrupt']
 	seed.singer = request.GET['singer']
 	seed.songs_name = '种子'
-	#
-	#
+	seed.interrupt = request.GET['interrupt']
+	seed.openid = request.GET['openid']
+	seed.IsDeleted = False
+	seed.CreateTime = '2020-07-06T12:21:12.872Z'
+	seed.UpdateTime= '2020-07-06T12:21:12.872Z'
 	print(seed.focus_time)
-	#
 	seed.save()
 	data_dict = {
-
 		"success": seed.songs_name,
 	}
 	return JsonResponse(data_dict,json_dumps_params={'ensure_ascii':False},safe=False)
