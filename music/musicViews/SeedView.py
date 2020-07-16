@@ -8,13 +8,21 @@ from myblogdjango.base import DataSqlHandler
 #添加种子参数
 @csrf_exempt
 def createSeedHandler(request):
-	seed = Seed()
-	seed.focus_time = request.GET['focus_time']
-	seed.interrupt_time = request.GET['interrupt_time']
-	seed.singer = request.GET['singer']
-	seed.songs_name = 'zz'
-	seed.interrupt = request.GET['interrupt']
-	seed.openid = request.GET['openid']
+	try:
+		seed = Seed()
+		seed.focus_time = request.GET['focus_time']
+		seed.interrupt_time = request.GET['interrupt_time']
+		seed.singer = request.GET['singer']
+		seed.songs_name = 'zz'
+		seed.interrupt = request.GET['interrupt']
+		seed.openid = request.GET['openid']
+		data_dict = {
+			"success": 'success716',
+		}
+		seed.save()
+		return JsonResponse(data_dict, json_dumps_params={'ensure_ascii': False}, safe=False)
+	except Exception as e:
+		return JsonResponse(e, json_dumps_params={'ensure_ascii': False}, safe=False)
 	# seed.IsDeleted = False
 	# seed.CreateTime = '2020-07-06T12:21:12.872Z'
 	# seed.UpdateTime= '2020-07-06T12:21:12.872Z'
@@ -28,17 +36,15 @@ def createSeedHandler(request):
     #     openid = request.GET['openid']
 	# )
 	# print(request.POST)
-	data_dict = {
-		"success": 'success716',
-	}
+
 	# try:
 	# 	back = seed.save()
 	# 	return back
 	# except Exception as e:
 	#
 	# 	return JsonResponse(error_string=str(e))
-	seed.save()
-	return JsonResponse(data_dict,json_dumps_params={'ensure_ascii':False},safe=False)
+	# seed.save()
+	# return JsonResponse(data_dict,json_dumps_params={'ensure_ascii':False},safe=False)
 
 #添加参数
 @csrf_exempt
