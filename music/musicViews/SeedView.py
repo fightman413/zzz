@@ -41,6 +41,7 @@ def InitHandler(request):
 		data_dict = {
 			"success": seed.singer,
 		}
+        seed.save()
 		return JsonResponse(data_dict,json_dumps_params={'ensure_ascii':False},safe=False)
 
 #删除参数
