@@ -35,13 +35,13 @@ def createSeedHandler(request):
 #添加参数
 @csrf_exempt
 def InitHandler(request):
-    seed = Seed()
-    seed.singer=request.GET['singer'],
-    seed.songs_name = '种子',
-    data_dict = {
-    	"success": seed.singer,
-    }
-	return JsonResponse(data_dict,json_dumps_params={'ensure_ascii':False},safe=False)
+		seed = Seed()
+		seed.singer=request.GET['singer'],
+		seed.songs_name = '种子',
+		data_dict = {
+			"success": seed.singer,
+		}
+		return JsonResponse(data_dict,json_dumps_params={'ensure_ascii':False},safe=False)
 
 #删除参数
 @csrf_exempt
